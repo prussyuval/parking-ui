@@ -6,10 +6,14 @@ import './App.scss';
 
 const PARKING_LOT_NAMES = {
     "tel nordau": "תל נורדאו",
+    "habima theatre": "הבימה",
+    "ravnitski": "רבניצקי",
 }
 
 const PARKING_LOT_IDS = {
     "tel nordau": 45,
+    "habima theatre": 94,
+    "ravnitski": 45,
 }
 
 const PARKING_LOT_STATUS = {
@@ -87,9 +91,9 @@ function App() {
           }
           const selectedLotId = PARKING_LOT_IDS[selectedLotName];
 
-          // const response = await ServerRequest.get('status', {lotId: selectedLotId});
-          // setStats(response.data);
-          setStatistics({"success":true,"data":{"current":"EMPTY","stored_status":{"08/11/2021 22:43":1,"11/10/2021 22:43":2},"time":"08/11/2021 22:43"}});
+          const response = await ServerRequest.get('status', {lotId: selectedLotId});
+          setStatistics(response.data);
+          // setStatistics({"success":true,"data":{"current":"EMPTY","stored_status":{"08/11/2021 22:43":1,"11/10/2021 22:43":2},"time":"08/11/2021 22:43"}});
         }
 
       refreshOnMount();
