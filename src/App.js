@@ -67,7 +67,7 @@ const Stats = (props) => {
                         Object.entries(props.statistics["data"]["stored_status"]).map(([time, status]) => {
                             return (
                                 <div style={{color: STATUS_COLOR[NUMERIC_STATUS_MAPPING[status]]}}>
-                                    {time} => {status}
+                                    {time} => {NUMERIC_STATUS_MAPPING[status]}
                                 </div>
                             );
                         })
