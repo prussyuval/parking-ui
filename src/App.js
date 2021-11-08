@@ -91,7 +91,7 @@ function App() {
           }
           const selectedLotId = PARKING_LOT_IDS[selectedLotName];
 
-          const response = await ServerRequest.get('status', {lotId: selectedLotId});
+          const response = await ServerRequest.get('status', {lot_id: selectedLotId});
           setStatistics(response.data);
           // setStatistics({"success":true,"data":{"current":"EMPTY","stored_status":{"08/11/2021 22:43":1,"11/10/2021 22:43":2},"time":"08/11/2021 22:43"}});
         }
