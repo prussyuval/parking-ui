@@ -88,6 +88,22 @@ const StatisticsPage = (props) => {
                     }
                 </div>
             </div>
+            <div className="statistics-section">
+                <div className="statistics-title">
+                    Future (prediction in 30 minutes)
+                </div>
+                <div className="statistics-content">
+                    {
+                        Object.entries(statistics["data"]["future_status"]).map(([time, status]) => {
+                            return (
+                                <div style={{color: STATUS_COLOR[NUMERIC_STATUS_MAPPING[status]]}}>
+                                    {time} => {NUMERIC_STATUS_MAPPING[status]}
+                                </div>
+                            );
+                        })
+                    }
+                </div>
+            </div>
         </Fragment>
     )
 }
