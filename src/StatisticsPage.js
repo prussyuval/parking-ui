@@ -1,7 +1,7 @@
 import {Fragment, useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
+import CircularProgress from '@mui/material/CircularProgress';
 import ServerRequest from "./ServerRequest";
-import SearchComponent from "./SearchComponent";
 
 const PARKING_LOT_STATUS = {
     EMPTY: "Many parking spots are available",
@@ -38,16 +38,19 @@ const StatisticsPage = (props) => {
               return;
           }
           const selectedLotId = PARKING_LOT_IDS[lotEngName];
-          // const response = await ServerRequest.get('status', {lot_id: selectedLotId});
-          // setStatistics(response);
-          setStatistics({"success":true,"data":{"current":"EMPTY","stored_status":{"08/11/2021 22:43":1,"11/10/2021 22:43":2},"time":"08/11/2021 22:43"}});
+          const response = await ServerRequest.get('status', {lot_id: selectedLotId});
+          setStatistics(response);
         }
 
       refreshOnMount();
   }, [lotEngName]);
 
     if (statistics === null) {
-        return null;
+        return (
+            <div>
+                <CircularProgress />
+            </div>
+        );
     }
 
     if (statistics["success"] === false) {
