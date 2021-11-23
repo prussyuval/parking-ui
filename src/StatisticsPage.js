@@ -24,7 +24,7 @@ const NUMERIC_STATUS_MAPPING = {
 const PARKING_LOT_IDS = {
     "tel nordau": 45,
     "habima theatre": 94,
-    "ravnitski": 45,
+    "ravnitski": 40,
 }
 
 
