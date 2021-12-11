@@ -1,12 +1,14 @@
 import {Fragment} from "react";
 
-const getText = (full, few, empty) => {
+const getText = (full, few, empty, future) => {
     if ( full === 100 || few === 100 || empty === 100) {
         let status;
         if (full === 100) {status = "full"}
         if (few === 100) {status = "have a few spots left"}
         if (empty === 100) {status = "free"}
-        return `Parking lot is always ${status} now`;
+
+        const time = future ? "is" : "will";
+        return `Parking lot ${time} always ${status} at this time`;
     }
 
     if ( full > 50 || few > 50 || empty > 50) {
@@ -14,7 +16,8 @@ const getText = (full, few, empty) => {
         if (full > 50) {status = "full"}
         if (few > 50) {status = "have a few spots left"}
         if (empty > 50) {status = "free"}
-        return `Parking lot is usually ${status} now`;
+        const time = future ? "is" : "will";
+        return `Parking lot ${time} usually ${status} at this time`;
     }
 
     const statuses = [full, empty, few];
@@ -23,7 +26,8 @@ const getText = (full, few, empty) => {
         if (full === 50) {statuses.push("full")}
         if (few === 50) {statuses.push("almost full")}
         if (empty === 50) {statuses.push("empty")}
-        return `Parking lot is usually ${statuses.join(" or ")} now`;
+        const time = future ? "is" : "will";
+        return `Parking lot ${time} usually be ${statuses.join(" or ")} at this time`;
     }
 
     return `Parking lot capacity is very inconsistence`;
@@ -40,7 +44,7 @@ const StatusBar = ({...props}) => {
     const fewWidth = (props.few / total) * 100;
     const emptyWidth = (props.empty / total) * 100;
 
-    const text = getText(fullWidth, fewWidth, emptyWidth);
+    const text = getText(fullWidth, fewWidth, emptyWidth, props.future === true);
 
     return (
         <Fragment>

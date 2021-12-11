@@ -108,7 +108,7 @@ const StatisticsPage = (props) => {
                 </div>
                 {/*<FutureStatistics />*/}
                 <div className="statistics-content">
-                    <StatusBar full={futureFull} empty={futureEmpty} few={futureFew} withText={false} />
+                    <StatusBar full={futureFull} empty={futureEmpty} few={futureFew} withText={true} future={true}/>
                 {/*    {*/}
                 {/*        Object.entries(futureStatus).map(([time, status]) => {*/}
                 {/*            return (*/}
