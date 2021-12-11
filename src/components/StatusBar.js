@@ -1,6 +1,14 @@
 import {Fragment} from "react";
 
 const getText = (full, few, empty) => {
+    if ( full === 100 || few === 100 || empty === 100) {
+        let status;
+        if (full === 100) {status = "full"}
+        if (few === 100) {status = "have a few spots left"}
+        if (empty === 100) {status = "free"}
+        return `Parking lot is always ${status} now`;
+    }
+
     if ( full > 50 || few > 50 || empty > 50) {
         let status;
         if (full > 50) {status = "full"}
@@ -18,6 +26,7 @@ const getText = (full, few, empty) => {
         return `Parking lot is usually ${statuses.join(" or ")} now`;
     }
 
+    return `Parking lot capacity is very inconsistence`;
 }
 
 
