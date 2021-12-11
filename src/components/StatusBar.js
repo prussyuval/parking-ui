@@ -7,7 +7,7 @@ const getText = (full, few, empty, future) => {
         if (few === 100) {status = "have a few spots left"}
         if (empty === 100) {status = "free"}
 
-        const time = future ? "is" : "will";
+        const time = future ? "will" : "is";
         return `Parking lot ${time} always ${status} at this time`;
     }
 
@@ -16,7 +16,7 @@ const getText = (full, few, empty, future) => {
         if (full > 50) {status = "full"}
         if (few > 50) {status = "have a few spots left"}
         if (empty > 50) {status = "free"}
-        const time = future ? "is" : "will";
+        const time = future ? "will" : "is";
         return `Parking lot ${time} usually ${status} at this time`;
     }
 
@@ -26,7 +26,7 @@ const getText = (full, few, empty, future) => {
         if (full === 50) {statuses.push("full")}
         if (few === 50) {statuses.push("almost full")}
         if (empty === 50) {statuses.push("empty")}
-        const time = future ? "is" : "will";
+        const time = future ? "will" : "is";
         return `Parking lot ${time} usually be ${statuses.join(" or ")} at this time`;
     }
 

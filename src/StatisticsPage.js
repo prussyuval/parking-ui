@@ -90,7 +90,7 @@ const StatisticsPage = (props) => {
                     Previous
                 </div>
                 <div className="statistics-content">
-                    <StatusBar full={storedFull} empty={storedEmpty} few={storedFew} withText={true} />
+                    <StatusBar full={storedFull} empty={storedEmpty} few={storedFew} withText={true} future={false} />
                     {/*{*/}
                     {/*    Object.entries(statistics["data"]["stored_status"]).map(([time, status]) => {*/}
                     {/*        return (*/}
