@@ -28,7 +28,7 @@ const Header = (props) => {
               onClose={toggleDrawer(false)} >Soon...
             </Drawer>
             <div id="site-title" onClick={navigateHome}>
-                  Free Park
+                  Parkour
             </div>
             <div>
 
