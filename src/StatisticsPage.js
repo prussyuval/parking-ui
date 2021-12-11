@@ -118,7 +118,7 @@ const StatisticsPage = (props) => {
                 {/*        })*/}
                 {/*    }*/}
                 {/*</div>*/}
-                <StatusBar full={futureFull} empty={futureEmpty} few={futureFew} withText={true} />
+                <StatusBar full={futureFull} empty={futureEmpty} few={futureFew} withText={false} />
             </div>
         </Fragment>
     )
