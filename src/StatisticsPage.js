@@ -107,7 +107,8 @@ const StatisticsPage = (props) => {
                     Future (prediction in 30 minutes)
                 </div>
                 {/*<FutureStatistics />*/}
-                {/*<div className="statistics-content">*/}
+                <div className="statistics-content">
+                    <StatusBar full={futureFull} empty={futureEmpty} few={futureFew} withText={false} />
                 {/*    {*/}
                 {/*        Object.entries(futureStatus).map(([time, status]) => {*/}
                 {/*            return (*/}
@@ -117,8 +118,7 @@ const StatisticsPage = (props) => {
                 {/*            );*/}
                 {/*        })*/}
                 {/*    }*/}
-                {/*</div>*/}
-                <StatusBar full={futureFull} empty={futureEmpty} few={futureFew} withText={false} />
+                </div>
             </div>
         </Fragment>
     )
