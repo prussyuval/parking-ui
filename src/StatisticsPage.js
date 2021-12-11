@@ -2,6 +2,8 @@ import {Fragment, useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import CircularProgress from '@mui/material/CircularProgress';
 import ServerRequest from "./ServerRequest";
+import FutureStatistics from "./components/FutureStatistics";
+import StatusBar from "./components/StatusBar";
 
 const PARKING_LOT_STATUS = {
     EMPTY: "Many parking spots are available",
@@ -40,6 +42,7 @@ const StatisticsPage = (props) => {
           const selectedLotId = PARKING_LOT_IDS[lotEngName];
           const response = await ServerRequest.get('status', {lot_id: selectedLotId});
           setStatistics(response);
+          // setStatistics({"success":true,"data":{"current":"EMPTY","future_status": {}, "stored_status":{"08/11/2021 22:43":1,"11/10/2021 22:43":2},"time":"08/11/2021 22:43"}});
         }
 
       refreshOnMount();
@@ -61,6 +64,10 @@ const StatisticsPage = (props) => {
         )
     }
     const currentStatus = statistics["data"]["current"];
+    const storedStatus = statistics["data"]["stored_status"];
+    const storedFull = Object.values(storedStatus).filter(status => status === 3).length;
+    const storedFew = Object.values(storedStatus).filter(status => status === 2).length;
+    const storedEmpty = Object.values(storedStatus).filter(status => status === 1).length;
 
     return (
         <Fragment>
@@ -77,21 +84,23 @@ const StatisticsPage = (props) => {
                     Previous
                 </div>
                 <div className="statistics-content">
-                    {
-                        Object.entries(statistics["data"]["stored_status"]).map(([time, status]) => {
-                            return (
-                                <div style={{color: STATUS_COLOR[NUMERIC_STATUS_MAPPING[status]]}}>
-                                    {time} => {NUMERIC_STATUS_MAPPING[status]}
-                                </div>
-                            );
-                        })
-                    }
+                    <StatusBar full={storedFull} empty={storedEmpty} few={storedFew} />
+                    {/*{*/}
+                    {/*    Object.entries(statistics["data"]["stored_status"]).map(([time, status]) => {*/}
+                    {/*        return (*/}
+                    {/*            <div style={{color: STATUS_COLOR[NUMERIC_STATUS_MAPPING[status]]}}>*/}
+                    {/*                {time} => {NUMERIC_STATUS_MAPPING[status]}*/}
+                    {/*            </div>*/}
+                    {/*        );*/}
+                    {/*    })*/}
+                    {/*}*/}
                 </div>
             </div>
             <div className="statistics-section">
-                <div className="statistics-title">
-                    Future (prediction in 30 minutes)
-                </div>
+                {/*<div className="statistics-title">*/}
+                {/*    Future (prediction in 30 minutes)*/}
+                {/*</div>*/}
+                {/*<FutureStatistics />*/}
                 <div className="statistics-content">
                     {
                         Object.entries(statistics["data"]["future_status"]).map(([time, status]) => {

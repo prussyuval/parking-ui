@@ -39,14 +39,6 @@
 
 $page-width: 85%;
 
-#site-title {
-  margin-top: 23px;
-  font-size: 19px;
-  color: black;
-  font-family: "Roboto";
-}
-
-
 #lot-search {
   margin-top: 16px;
   background-color: #F2F4F7;
@@ -108,5 +100,58 @@ $page-width: 85%;
 
   &:last-of-type {
     border-bottom: 1px solid #D3DAE0;
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: $page-width;
+  margin-left: 7.5%;
+  margin-top: 23px;
+
+  .menu-icon {
+    padding: 0;
+  }
+
+  #site-title {
+    font-size: 19px;
+    color: black;
+    font-family: "Roboto";
+  }
+}
+
+.all-progress-text {
+  height: 36px;
+}
+
+.all-progress {
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+
+  .progress {
+    height: 5px;
+    }
+
+  .full-progress {
+    background: #ED3C15;
+    box-shadow: 0px 0px 8px #ED3C15;
+  }
+
+  .few-progress {
+    background: #F0DB19;
+    box-shadow: 0px 0px 8px #F0DB19;
+  }
+
+  .empty-progress {
+    background: #44B056;
+    box-shadow: 0px 0px 8px #44B056;
+  }
+
+  .progress-text {
+    font-size: 12px;
+    margin-top: -18px;
   }
 }
