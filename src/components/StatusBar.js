@@ -29,6 +29,10 @@ const getText = (full, few, empty) => {
     return `Parking lot capacity is very inconsistence`;
 }
 
+const roundNumber = (number) => {
+    return Math.round((number + Number.EPSILON) * 100) / 100;
+}
+
 
 const StatusBar = ({...props}) => {
     const total = props.full + props.empty + props.few;
@@ -47,7 +51,7 @@ const StatusBar = ({...props}) => {
                 {fullWidth !== 0 && (
                     <div className="progress full-progress" style={{width: `${fullWidth}%`}}>
                         <div className="progress-text">
-                            {`${fullWidth}%`}
+                            {`${roundNumber(fullWidth)}%`}
                         </div>
                     </div>
                     )
@@ -55,7 +59,7 @@ const StatusBar = ({...props}) => {
                 {fewWidth !== 0 && (
                     <div className="progress few-progress" style={{width: `${fewWidth}%`}}>
                         <div className="progress-text">
-                            {`${fewWidth}%`}
+                            {`${roundNumber(fewWidth)}%`}
                         </div>
                     </div>
                     )
@@ -63,7 +67,7 @@ const StatusBar = ({...props}) => {
                 {emptyWidth !== 0 && (
                     <div className="progress empty-progress" style={{width: `${emptyWidth}%`}}>
                         <div className="progress-text">
-                            {`${emptyWidth}%`}
+                            {`${roundNumber(emptyWidth)}%`}
                         </div>
                     </div>
                     )
