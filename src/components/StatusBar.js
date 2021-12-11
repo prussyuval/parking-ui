@@ -44,9 +44,11 @@ const StatusBar = ({...props}) => {
 
     return (
         <Fragment>
-            <div className="all-progress-text">
-                {text}
-            </div>
+            {props.withText && (
+                <div className="all-progress-text">
+                    {text}
+                </div>
+            )}
             <div className="all-progress">
                 {fullWidth !== 0 && (
                     <div className="progress full-progress" style={{width: `${fullWidth}%`}}>

@@ -65,9 +65,15 @@ const StatisticsPage = (props) => {
     }
     const currentStatus = statistics["data"]["current"];
     const storedStatus = statistics["data"]["stored_status"];
+    const futureStatus = statistics["data"]["future_status"];
+
     const storedFull = Object.values(storedStatus).filter(status => status === 3).length;
     const storedFew = Object.values(storedStatus).filter(status => status === 2).length;
     const storedEmpty = Object.values(storedStatus).filter(status => status === 1).length;
+
+    const futureFull = Object.values(futureStatus).filter(status => status === 3).length;
+    const futureFew = Object.values(futureStatus).filter(status => status === 2).length;
+    const futureEmpty = Object.values(futureStatus).filter(status => status === 1).length;
 
     return (
         <Fragment>
@@ -84,7 +90,7 @@ const StatisticsPage = (props) => {
                     Previous
                 </div>
                 <div className="statistics-content">
-                    <StatusBar full={storedFull} empty={storedEmpty} few={storedFew} />
+                    <StatusBar full={storedFull} empty={storedEmpty} few={storedFew} withText={true} />
                     {/*{*/}
                     {/*    Object.entries(statistics["data"]["stored_status"]).map(([time, status]) => {*/}
                     {/*        return (*/}
@@ -101,17 +107,18 @@ const StatisticsPage = (props) => {
                 {/*    Future (prediction in 30 minutes)*/}
                 {/*</div>*/}
                 {/*<FutureStatistics />*/}
-                <div className="statistics-content">
-                    {
-                        Object.entries(statistics["data"]["future_status"]).map(([time, status]) => {
-                            return (
-                                <div style={{color: STATUS_COLOR[NUMERIC_STATUS_MAPPING[status]]}}>
-                                    {time} => {NUMERIC_STATUS_MAPPING[status]}
-                                </div>
-                            );
-                        })
-                    }
-                </div>
+                {/*<div className="statistics-content">*/}
+                {/*    {*/}
+                {/*        Object.entries(futureStatus).map(([time, status]) => {*/}
+                {/*            return (*/}
+                {/*                <div style={{color: STATUS_COLOR[NUMERIC_STATUS_MAPPING[status]]}}>*/}
+                {/*                    {time} => {NUMERIC_STATUS_MAPPING[status]}*/}
+                {/*                </div>*/}
+                {/*            );*/}
+                {/*        })*/}
+                {/*    }*/}
+                {/*</div>*/}
+                <StatusBar full={futureFull} empty={futureEmpty} few={futureFew} withText={true} />
             </div>
         </Fragment>
     )
