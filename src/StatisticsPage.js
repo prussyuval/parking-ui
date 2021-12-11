@@ -103,9 +103,9 @@ const StatisticsPage = (props) => {
                 </div>
             </div>
             <div className="statistics-section">
-                {/*<div className="statistics-title">*/}
-                {/*    Future (prediction in 30 minutes)*/}
-                {/*</div>*/}
+                <div className="statistics-title">
+                    Future (prediction in 30 minutes)
+                </div>
                 {/*<FutureStatistics />*/}
                 {/*<div className="statistics-content">*/}
                 {/*    {*/}
