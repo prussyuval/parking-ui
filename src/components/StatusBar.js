@@ -40,6 +40,11 @@ const roundNumber = (number) => {
 
 const StatusBar = ({...props}) => {
     const total = props.full + props.empty + props.few;
+
+    if (total === 0) {
+        return null;
+    }
+
     const fullWidth = (props.full / total) * 100;
     const fewWidth = (props.few / total) * 100;
     const emptyWidth = (props.empty / total) * 100;
@@ -47,7 +52,7 @@ const StatusBar = ({...props}) => {
     const text = getText(fullWidth, fewWidth, emptyWidth, props.future === true);
 
     return (
-        <Fragment>
+        <div className="status-bar">
             {props.withText && (
                 <div className="all-progress-text">
                     {text}
@@ -79,7 +84,7 @@ const StatusBar = ({...props}) => {
                     )
                 }
             </div>
-        </Fragment>
+        </div>
     )
 };
 

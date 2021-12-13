@@ -1,0 +1,135 @@
+@import 'fonts.scss';
+@import 'common.scss';
+
+html {
+  width: 85%;
+  margin-left: 7.5%;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 23px;
+
+  .menu-icon {
+    padding: 0;
+  }
+
+  #site-title {
+    font-size: 19px;
+    color: black;
+    font-family: $main-font;
+  }
+}
+
+#lot-search {
+  margin-top: 16px;
+  background-color: #F2F4F7;
+  width: calc(100% - 42px);
+  padding-left: 10px;
+  padding-right: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  font-family: $main-font;
+  font-size: 16px;
+
+  &:focus {
+      outline-width: 0;
+  }
+}
+
+.search-icon {
+  position: absolute;
+  height: 16px;
+  margin-top: 24px;
+  margin-left: calc(100% - 388px);
+  cursor: default;
+}
+
+.search-results {
+  margin-top: 16px;
+
+  .lot-option {
+    font-size: 18px;
+    border-top: 1px solid #D3DAE0;
+    font-family: $main-font;
+    display: flex;
+    align-items: center;
+
+    &__text {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+    &:last-of-type {
+      border-bottom: 1px solid #D3DAE0;
+    }
+  }
+}
+
+
+.statistics-section {
+  margin-top: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-top: 1px solid #D3DAE0;
+  font-family: $main-font;
+  font-size: 16px;
+  text-align: left;
+  animation: fadeIn 0.2s linear;
+
+  .statistics-title {
+    font-weight: 500;
+  }
+
+  .statistics-content {
+    margin-top: 16px;
+  }
+
+  &:last-of-type {
+    border-bottom: 1px solid #D3DAE0;
+  }
+}
+
+
+.status-bar {
+  animation: fadeIn 0.2s linear;
+
+  .all-progress-text {
+    height: 36px;
+  }
+
+  .all-progress {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    margin-top: 16px;
+
+    .progress {
+      height: 5px;
+      }
+
+    .full-progress {
+      background: #ED3C15;
+      box-shadow: 0px 0px 8px #ED3C15;
+    }
+
+    .few-progress {
+      background: #F0DB19;
+      box-shadow: 0px 0px 8px #F0DB19;
+    }
+
+    .empty-progress {
+      background: #44B056;
+      box-shadow: 0px 0px 8px #44B056;
+    }
+
+    .progress-text {
+      font-size: 12px;
+      margin-top: -18px;
+    }
+  }
+}

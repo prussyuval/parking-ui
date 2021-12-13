@@ -1,7 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import "@fontsource/roboto";
 
-import './App.scss';
+import './styles/index.scss';
 import SearchComponent from "./SearchComponent";
 import StatisticsPage from "./StatisticsPage";
 import Header from "./Header";
