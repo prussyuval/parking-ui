@@ -91,33 +91,15 @@ const StatisticsPage = (props) => {
                 </div>
                 <div className="statistics-content">
                     <StatusBar full={storedFull} empty={storedEmpty} few={storedFew} withText={true} future={false} />
-                    {/*{*/}
-                    {/*    Object.entries(statistics["data"]["stored_status"]).map(([time, status]) => {*/}
-                    {/*        return (*/}
-                    {/*            <div style={{color: STATUS_COLOR[NUMERIC_STATUS_MAPPING[status]]}}>*/}
-                    {/*                {time} => {NUMERIC_STATUS_MAPPING[status]}*/}
-                    {/*            </div>*/}
-                    {/*        );*/}
-                    {/*    })*/}
-                    {/*}*/}
                 </div>
             </div>
             <div className="statistics-section">
                 <div className="statistics-title">
                     Future (prediction in 30 minutes)
                 </div>
-                {/*<FutureStatistics />*/}
+                <FutureStatistics />
                 <div className="statistics-content">
                     <StatusBar full={futureFull} empty={futureEmpty} few={futureFew} withText={true} future={true}/>
-                {/*    {*/}
-                {/*        Object.entries(futureStatus).map(([time, status]) => {*/}
-                {/*            return (*/}
-                {/*                <div style={{color: STATUS_COLOR[NUMERIC_STATUS_MAPPING[status]]}}>*/}
-                {/*                    {time} => {NUMERIC_STATUS_MAPPING[status]}*/}
-                {/*                </div>*/}
-                {/*            );*/}
-                {/*        })*/}
-                {/*    }*/}
                 </div>
             </div>
         </Fragment>

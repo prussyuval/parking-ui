@@ -27,7 +27,7 @@ const getText = (full, few, empty, future) => {
         if (few === 50) {statuses.push("almost full")}
         if (empty === 50) {statuses.push("empty")}
         const time = future ? "will" : "is";
-        return `Parking lot ${time} usually be ${statuses.join(" or ")} at this time`;
+        return `Parking lot ${time} usually ${future ? "be " : ""}${statuses.join(" or ")} at this time`;
     }
 
     return `Parking lot capacity is very inconsistence`;

@@ -2,6 +2,7 @@ import {Fragment, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import SVG from "./assets/svg";
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import HomePage from "./HomePage";
 
 const PARKING_LOT_NAMES = {
     "tel nordau": "תל נורדאו",
@@ -42,8 +43,15 @@ const SearchComponent = () => {
 
   return (
       <Fragment>
-          <input id="lot-search" value={lotSearchValue} onChange={onSearchChange} />
-          <SVG name="search" width="16px" className="search-icon" />
+          <div>
+              <input id="lot-search" value={lotSearchValue} onChange={onSearchChange} />
+              <SVG name="search" width="16px" className="search-icon" />
+          </div>
+
+          {lotSearchValue === "" && (
+              <HomePage />
+          )}
+
           <div className="search-results">
               {Object.entries(searchOptions).map(([engName, hebName]) =>
                   <div key={engName} className="lot-option" onClick={() => {selectLot(engName)}}>

@@ -44,8 +44,9 @@ html {
 .search-icon {
   position: absolute;
   height: 16px;
+  width: 16px;
   margin-top: 24px;
-  margin-left: calc(100% - 388px);
+  right: calc(7.5% + 12px);
   cursor: default;
 }
 
@@ -132,4 +133,47 @@ html {
       margin-top: -18px;
     }
   }
+}
+
+@keyframes slidein {
+  from {
+    margin-left: calc(100% - 66px);
+  }
+
+  to {
+    margin-left: 0;
+  }
+}
+
+.home-page {
+  margin-top: 32px;
+  font-family: $main-font;
+  font-size: 36px;
+  line-height: 50px;
+
+  &__first-liner {
+    font-weight: bold;
+  }
+
+  &__second-liner {
+
+  }
+
+  &__car {
+    height: 36px;
+    margin-top: 15px;
+
+    &.speed-fast {
+      animation: slidein 3s linear infinite alternate;
+    }
+
+    &.speed-medium {
+      animation: slidein 6s linear infinite alternate;
+    }
+
+    &.speed-slow {
+      animation: slidein 9s linear infinite alternate;
+    }
+  }
+
 }
