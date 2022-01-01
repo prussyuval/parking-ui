@@ -88,7 +88,6 @@ class ApexChart extends React.Component {
             series: FLIPPED ? produceChartDataFlipped(this.props.heatMapData) : produceChartData(this.props.heatMapData),
             options: {
                 chart: {
-                    height: FLIPPED ? 700 : 350,
                     type: 'heatmap',
                 },
                 dataLabels: {
@@ -131,7 +130,7 @@ class ApexChart extends React.Component {
 
         return (
             <div id="chart">
-                <ReactApexChart options={chartData.options} series={chartData.series} type="heatmap" height={350}/>
+                <ReactApexChart options={chartData.options} series={chartData.series} type="heatmap" height={FLIPPED ? 700 : 350}/>
             </div>
         )
     }
