@@ -69,10 +69,7 @@ class ApexChart extends React.Component {
 
         return (
             <div id="chart">
-                <ReactApexChart options={
-                    [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
-                } series={this.state.series} type="heatmap"
-                                height={350}/>
+                <ReactApexChart options={chartData.options} series={chartData.series} type="heatmap" height={350}/>
             </div>
         )
     }
