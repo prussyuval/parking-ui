@@ -8,7 +8,7 @@ const STR_DAY_MAP = {
     "Wednesday": 3,
     "Thursday": 4,
     "Friday": 5,
-    "Saturday": 6
+    "Saturday": 6,
 }
 
 const formatHour = (hour) => {
@@ -23,8 +23,8 @@ const getHeatMapDataByHour = (heatMapData, hourI) => {
     let realHeatMapData = [];
 
     for (const[day, hourValues] of Object.entries(heatMapData)) {
-        var dayStr = Object.keys(STR_DAY_MAP).filter(function(key) {return STR_DAY_MAP[key] === day})[0];
-
+        let dayStr = Object.keys(STR_DAY_MAP).filter(function(key) {return STR_DAY_MAP[key] === day})[0];
+        console.log(hourValues);
         for (let [hour, value] of Object.entries(hourValues)) {
             if (hour === hourI) {
                 realHeatMapData.push(
@@ -40,6 +40,18 @@ const getHeatMapDataByHour = (heatMapData, hourI) => {
     }
 
     return realHeatMapData;
+}
+
+const produceChartDataFlipped = (heatMapData) => {
+    const data = [];
+    for(let i = 0; i <= 23; i++)
+        data.push(
+            {
+                name: formatHour(i),
+                data: getHeatMapDataByHour(heatMapData, i)
+            }
+        );
+    return data;
 }
 
 const getHeatMapDataByDay = (heatMapData, dayI) => {
@@ -68,18 +80,6 @@ const produceChartData = (heatMapData) => {
     }
     return data;
 };
-
-const produceChartDataFlipped = (heatMapData) => {
-    const data = [];
-    for(let i = 0; i <= 23; i++)
-        data.push(
-            {
-                name: formatHour(i),
-                data: getHeatMapDataByHour(heatMapData, i)
-            }
-        );
-    return data;
-}
 
 class ApexChart extends React.Component {
     render() {
