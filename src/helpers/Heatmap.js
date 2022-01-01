@@ -75,6 +75,34 @@ class ApexChart extends React.Component {
                 title: {
                     text: 'HeatMap Chart (Single color)'
                 },
+                plotOptions: {
+                    heatmap: {
+                        shadeIntensity: 0.5,
+                        radius: 0,
+                        useFillColorAsStroke: true,
+                        colorScale: {
+                            ranges: [{
+                                    from: 0,
+                                    to: 90,
+                                    name: 'low',
+                                    color: '#00A100'
+                                },
+                                {
+                                    from: 90,
+                                    to: 95,
+                                    name: 'high',
+                                    color: '#FFB200'
+                                },
+                                {
+                                    from: 95,
+                                    to: 100,
+                                    name: 'extreme',
+                                    color: '#FF0000'
+                                }
+                            ]
+                        }
+                    }
+                }
             },
         };
 
