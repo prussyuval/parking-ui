@@ -12,6 +12,7 @@ const STR_DAY_MAP = {
 }
 
 const getHeatMapDataByDay = (heatMapData, dayI) => {
+    console.log(heatMapData[STR_DAY_MAP[dayI]]);
     return heatMapData[STR_DAY_MAP[dayI]];
 }
 
