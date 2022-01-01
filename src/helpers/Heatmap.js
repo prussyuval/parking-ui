@@ -91,21 +91,21 @@ class ApexChart extends React.Component {
                         useFillColorAsStroke: false,
                         colorScale: {
                             ranges: [{
-                                    from: 0,
-                                    to: 90,
-                                    name: 'low',
+                                    from: 10,
+                                    to: 100,
+                                    name: 'free',
                                     color: '#00A100'
                                 },
                                 {
-                                    from: 90,
-                                    to: 95,
-                                    name: 'high',
+                                    from: 5,
+                                    to: 10,
+                                    name: 'almost full',
                                     color: '#FFB200'
                                 },
                                 {
-                                    from: 95,
-                                    to: 100,
-                                    name: 'extreme',
+                                    from: 0,
+                                    to: 5,
+                                    name: 'full',
                                     color: '#FF0000'
                                 }
                             ]
