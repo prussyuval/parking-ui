@@ -26,9 +26,9 @@ const HeatmapPage = (props) => {
       getHeatMapData();
   }, [parkingLot]);
 
-    const searchParkingLot = (value) => {
+    const searchParkingLot = (event) => {
         setLoading(true);
-        setParkingLotId(value);
+        setParkingLotId(event.target.value);
     }
 
     if (parkingLot === null) {
