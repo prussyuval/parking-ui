@@ -45,7 +45,7 @@ const getHeatMapDataByHour = (heatMapData, hourI) => {
 
 const produceChartDataFlipped = (heatMapData) => {
     const data = [];
-    for(let i = 0; i <= 23; i++)
+    for(let i = 0; i <= 23; i += 0.5)
         data.push(
             {
                 name: formatHour(i),
