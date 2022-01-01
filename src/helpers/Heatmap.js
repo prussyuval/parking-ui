@@ -1,6 +1,8 @@
 import ReactApexChart from 'react-apexcharts';
 import React from "react";
 
+const FLIPPED = true;
+
 const STR_DAY_MAP = {
     "Sunday": 0,
     "Monday": 1,
@@ -83,10 +85,10 @@ const produceChartData = (heatMapData) => {
 class ApexChart extends React.Component {
     render() {
         const chartData = {
-            series: produceChartDataFlipped(this.props.heatMapData),
+            series: FLIPPED ? produceChartDataFlipped(this.props.heatMapData) : produceChartData(this.props.heatMapData),
             options: {
                 chart: {
-                    height: 350,
+                    height: FLIPPED ? 700 : 350,
                     type: 'heatmap',
                 },
                 dataLabels: {
