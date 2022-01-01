@@ -82,7 +82,7 @@ class ApexChart extends React.Component {
                 },
                 colors: ["#008FFB"],
                 title: {
-                    text: 'HeatMap Chart (Single color)'
+                    text: ''
                 },
                 plotOptions: {
                     heatmap: {
