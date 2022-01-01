@@ -11,6 +11,14 @@ const STR_DAY_MAP = {
     "Saturday": 6
 }
 
+const formatHour = (hour) => {
+    if (hour < 10) {
+        return `0${hour}:00`;
+    }
+
+    return `${hour}:00`
+}
+
 const getHeatMapDataByDay = (heatMapData, dayI) => {
     console.log(heatMapData[STR_DAY_MAP[dayI]]);
 
@@ -19,7 +27,7 @@ const getHeatMapDataByDay = (heatMapData, dayI) => {
     for (const[hour, value] of Object.entries(heatMapData[STR_DAY_MAP[dayI]])) {
         realHeatMapData.push(
             {
-                x: hour, y: value
+                x: formatHour(hour), y: value
             }
         )
     }
