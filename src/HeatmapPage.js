@@ -13,7 +13,7 @@ const HeatmapPage = (props) => {
 
           const response = await ServerRequest.get('lot-heat-map', {lot_id: 45});
           console.log(response);
-          setHeatMapData(response);
+          setHeatMapData(response.heat_map);
           setLoading(false);
         }
 
