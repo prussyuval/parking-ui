@@ -28,6 +28,7 @@ const getHeatMapDataByHour = (heatMapData, hourI) => {
         console.log(hourI);
         debugger;
         let hourValue = hourValues[hourI];
+        console.log(day);
         console.log(dayStr);
         console.log(hourValue);
         realHeatMapData.push(
