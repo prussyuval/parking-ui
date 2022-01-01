@@ -19,13 +19,20 @@ const Header = (props) => {
       navigate("/", {replace: true});
   }
 
+  const navigateToHeatMap = () => {
+      navigate("/heat-map", {replace: true});
+  }
+
     return (
         <div className="header">
             <MenuIcon onClick={toggleDrawer(true)} className="menu-icon" color={"inherit"} />
             <Drawer
               anchor="left"
               open={sideBarOpen}
-              onClose={toggleDrawer(false)} >Soon...
+              onClose={toggleDrawer(false)} >
+                <div onClick={navigateToHeatMap}>
+                    Heat map
+                </div>
             </Drawer>
             <div id="site-title" onClick={navigateHome}>
                   Parkour
