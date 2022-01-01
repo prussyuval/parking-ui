@@ -25,7 +25,7 @@ const getHeatMapDataByHour = (heatMapData, hourI) => {
     let realHeatMapData = [];
 
     for (const[day, hourValues] of Object.entries(heatMapData)) {
-        let dayStr = Object.keys(STR_DAY_MAP).filter(function(key) {return STR_DAY_MAP[key] === parseFloat(day)})[0];
+        let dayStr = Object.keys(STR_DAY_MAP).filter(function(key) {return STR_DAY_MAP[key] === parseInt(day)})[0];
         console.log(hourValues);
         console.log(hourI);
         debugger;
@@ -45,7 +45,7 @@ const getHeatMapDataByHour = (heatMapData, hourI) => {
 
 const produceChartDataFlipped = (heatMapData) => {
     const data = [];
-    for(let i = 0; i <= 23; i += 0.5)
+    for(let i = 0; i <= 23.5; i += 0.5)
         data.push(
             {
                 name: formatHour(i),
