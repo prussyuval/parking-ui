@@ -5,6 +5,7 @@ import './styles/index.scss';
 import SearchComponent from "./SearchComponent";
 import StatisticsPage from "./StatisticsPage";
 import Header from "./Header";
+import HeatmapPage from "./HeatmapPage";
 
 function App() {
   return (
@@ -12,12 +13,9 @@ function App() {
         <Router>
             <Header />
             <Routes>
-                <Route exact path="/">
-                    <Route exact path='/' element={<SearchComponent/>}/>
-                </Route>
-                <Route exact path="/stats/:lotEngName" element={<StatisticsPage />}>
-
-                </Route>
+                <Route exact path='/' element={<SearchComponent/>}/>
+                <Route exact path="/stats/:lotEngName" element={<StatisticsPage />} />
+                <Route exact path="/heat-map" element={<HeatmapPage/>} />
                 <Route exact path="/error">
                     {/*<ErrorPage />*/}
                 </Route>
