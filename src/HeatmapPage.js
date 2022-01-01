@@ -34,9 +34,9 @@ const HeatmapPage = (props) => {
     if (parkingLot === null) {
         return (
         <div>
-            <Box sx={{ minWidth: 120 }}>
+            <Box sx={{ minWidth: 120 }} id="parking-lot-heat-map-selector">
               <FormControl fullWidth>
-                <InputLabel id="parking-lot-heat-map-selector">Parking lot id</InputLabel>
+                <InputLabel>Parking lot id</InputLabel>
                 <Select
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
