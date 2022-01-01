@@ -27,7 +27,7 @@ const getHeatMapDataByDay = (heatMapData, dayI) => {
     for (const[hour, value] of Object.entries(heatMapData[STR_DAY_MAP[dayI]])) {
         realHeatMapData.push(
             {
-                x: formatHour(hour), y: value
+                x: formatHour(hour), y: 100 - value
             }
         )
     }
