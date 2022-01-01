@@ -5,7 +5,7 @@ import ApexChart from "./helpers/Heatmap";
 
 
 const HeatmapPage = (props) => {
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [heatMapData, setHeatMapData] = useState(null);
 
     useEffect(() => {
@@ -21,7 +21,7 @@ const HeatmapPage = (props) => {
       refreshOnMount();
   }, []);
 
-    if (loading === false) {
+    if (loading === true) {
         return (
             <div>
                 <CircularProgress />
