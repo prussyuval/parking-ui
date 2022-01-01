@@ -12,10 +12,9 @@ const HeatmapPage = (props) => {
       async function refreshOnMount() {
 
           const response = await ServerRequest.get('lot-heat-map', {lot_id: 45});
-          setLoading(false);
           console.log(response);
           setHeatMapData(response);
-          // setStatistics({"success":true,"data":{"current":"EMPTY","future_status": {}, "stored_status":{"08/11/2021 22:43":1,"11/10/2021 22:43":2},"time":"08/11/2021 22:43"}});
+          setLoading(false);
         }
 
       refreshOnMount();
