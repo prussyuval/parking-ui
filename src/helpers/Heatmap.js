@@ -16,13 +16,13 @@ const STR_DAY_MAP = {
 const formatHour = (hour) => {
     let hourComponent = "";
     if (hour < 10) {
-        hourComponent = `0${hour}`;
+        hourComponent = `0${parseInt(hour)}`;
     } else {
-        hourComponent = hour;
+        hourComponent = parseInt(hour);
     }
 
     let minuteComponent = "";
-    if (hour % 1 == 0) {
+    if (hour % 1 === 0) {
         minuteComponent = "00";
     } else {
         minuteComponent = "30";
@@ -134,7 +134,7 @@ class ApexChart extends React.Component {
 
         return (
             <div id="chart">
-                <ReactApexChart options={chartData.options} series={chartData.series} type="heatmap" height={FLIPPED ? 1400 : 350}/>
+                <ReactApexChart options={chartData.options} series={chartData.series} type="heatmap" height={FLIPPED ? 1000 : 350}/>
             </div>
         )
     }
