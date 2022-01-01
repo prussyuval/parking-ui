@@ -11,7 +11,7 @@ const HeatmapPage = (props) => {
     useEffect(() => {
       async function refreshOnMount() {
 
-          const response = await ServerRequest.get('lot-heat-map', {lot_id: 94});
+          const response = await ServerRequest.get('lot-heat-map', {lot_id: 45});
           console.log(response);
           setHeatMapData(response["data"]["heat_map"]);
           setLoading(false);
