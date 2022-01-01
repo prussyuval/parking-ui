@@ -34,33 +34,34 @@ class ApexChart extends React.Component {
 
     render() {
         const chartData = {
-            series: [{
-                    name: 'Sunday',
-                    data: getHeatMapDataByDay(this.props.heatMapData, 'Sunday')
-                },
+            series: [
                 {
-                    name: 'Monday',
-                    data: getHeatMapDataByDay(this.props.heatMapData, 'Monday')
-                },
-                {
-                    name: 'Tuesday',
-                    data: getHeatMapDataByDay(this.props.heatMapData, 'Tuesday')
-                },
-                {
-                    name: 'Wednesday',
-                    data: getHeatMapDataByDay(this.props.heatMapData, 'Wednesday')
-                },
-                {
-                    name: 'Thursday',
-                    data: getHeatMapDataByDay(this.props.heatMapData, 'Thursday')
+                    name: 'Saturday',
+                    data: getHeatMapDataByDay(this.props.heatMapData, 'Saturday')
                 },
                 {
                     name: 'Friday',
                     data: getHeatMapDataByDay(this.props.heatMapData, 'Friday')
                 },
                 {
-                    name: 'Saturday',
-                    data: getHeatMapDataByDay(this.props.heatMapData, 'Saturday')
+                    name: 'Thursday',
+                    data: getHeatMapDataByDay(this.props.heatMapData, 'Thursday')
+                },
+                {
+                    name: 'Wednesday',
+                    data: getHeatMapDataByDay(this.props.heatMapData, 'Wednesday')
+                },
+                {
+                    name: 'Tuesday',
+                    data: getHeatMapDataByDay(this.props.heatMapData, 'Tuesday')
+                },
+                {
+                    name: 'Monday',
+                    data: getHeatMapDataByDay(this.props.heatMapData, 'Monday')
+                },
+                {
+                    name: 'Sunday',
+                    data: getHeatMapDataByDay(this.props.heatMapData, 'Sunday')
                 },
             ],
             options: {
@@ -79,7 +80,7 @@ class ApexChart extends React.Component {
                     heatmap: {
                         shadeIntensity: 0.5,
                         radius: 0,
-                        useFillColorAsStroke: true,
+                        useFillColorAsStroke: false,
                         colorScale: {
                             ranges: [{
                                     from: 0,
