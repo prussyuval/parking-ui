@@ -1,7 +1,7 @@
 import CircularProgress from "@mui/material/CircularProgress";
 import {useEffect, useState} from "react";
 import ServerRequest from "./ServerRequest";
-import produceHeatMapElement from "./helpers/Heatmap";
+import ApexChart from "./helpers/Heatmap";
 
 
 const HeatmapPage = (props) => {
@@ -28,10 +28,9 @@ const HeatmapPage = (props) => {
         );
     }
 
-    const heatMapElement = produceHeatMapElement(heatMapData)
-
+    console.log(heatMapData);
     return (
-        <div>{heatMapElement}</div>
+        <ApexChart heatMapData={heatMapData} />
     );
 }
 
