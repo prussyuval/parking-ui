@@ -32,9 +32,11 @@ const formatHour = (hour) => {
 }
 
 const getHeatMapDataByHour = (heatMapData, hourI) => {
+    const DAYS_ORDER = [1,2,3,4,5,6,0];
     let realHeatMapData = [];
 
-    for (const[day, hourValues] of Object.entries(heatMapData)) {
+    for (const day of DAYS_ORDER) {
+        let hourValues = DAYS_ORDER[day];
         let dayStr = Object.keys(STR_DAY_MAP).filter(function(key) {return STR_DAY_MAP[key] === parseInt(day)})[0];
         let hourValue = hourValues[hourI.toFixed(1)];
         realHeatMapData.push(
