@@ -5,8 +5,8 @@ import ApexChart from "./helpers/Heatmap";
 
 
 const HeatmapPage = (props) => {
-    const [loading, setLoading] = useState();
-    const [heatMapData, setHeatMapData] = useState();
+    const [loading, setLoading] = useState(false);
+    const [heatMapData, setHeatMapData] = useState(null);
 
     useEffect(() => {
       async function refreshOnMount() {
