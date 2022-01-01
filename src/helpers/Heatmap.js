@@ -13,7 +13,18 @@ const STR_DAY_MAP = {
 
 const getHeatMapDataByDay = (heatMapData, dayI) => {
     console.log(heatMapData[STR_DAY_MAP[dayI]]);
-    return heatMapData[STR_DAY_MAP[dayI]];
+
+    let realHeatMapData = []
+
+    for (const[hour, value] of Object.entries(heatMapData[STR_DAY_MAP[dayI]])) {
+        realHeatMapData.push(
+            {
+                x: hour, y: value
+            }
+        )
+    }
+
+    return realHeatMapData;
 }
 
 class ApexChart extends React.Component {
@@ -23,11 +34,10 @@ class ApexChart extends React.Component {
 
     render() {
         const chartData = {
-
             series: [{
-                name: 'Sunday',
-                data: getHeatMapDataByDay(this.props.heatMapData, 'Sunday')
-            },
+                    name: 'Sunday',
+                    data: getHeatMapDataByDay(this.props.heatMapData, 'Sunday')
+                },
                 {
                     name: 'Monday',
                     data: getHeatMapDataByDay(this.props.heatMapData, 'Monday')
