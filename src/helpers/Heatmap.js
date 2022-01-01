@@ -19,9 +19,30 @@ const formatHour = (hour) => {
     return `${hour}:00`
 }
 
-const getHeatMapDataByDay = (heatMapData, dayI) => {
-    console.log(heatMapData[STR_DAY_MAP[dayI]]);
+const getHeatMapDataByHour = (heatMapData, hourI) => {
+    let realHeatMapData = [];
 
+    for (const[day, hourValues] of Object.entries(heatMapData)) {
+        var dayStr = Object.keys(STR_DAY_MAP).filter(function(key) {return STR_DAY_MAP[key] === day})[0];
+
+        for (let [hour, value] of Object.entries(hourValues)) {
+            if (hour === hourI) {
+                realHeatMapData.push(
+                    {
+                        x: dayStr, y: Math.round((100 - value) * 100) / 100
+                    }
+                )
+            }
+
+        }
+
+
+    }
+
+    return realHeatMapData;
+}
+
+const getHeatMapDataByDay = (heatMapData, dayI) => {
     let realHeatMapData = []
 
     for (const[hour, value] of Object.entries(heatMapData[STR_DAY_MAP[dayI]])) {
@@ -35,43 +56,35 @@ const getHeatMapDataByDay = (heatMapData, dayI) => {
     return realHeatMapData;
 }
 
-class ApexChart extends React.Component {
-    constructor(props) {
-        super(props);
+const produceChartData = (heatMapData) => {
+    const data = [];
+    for (let day in Object.keys(STR_DAY_MAP)) {
+        data.push(
+            {
+                name: day,
+                data: getHeatMapDataByDay(heatMapData, day)
+            }
+        )
     }
+    return data;
+};
 
+const produceChartDataFlipped = (heatMapData) => {
+    const data = [];
+    for(let i = 0; i <= 23; i++)
+        data.push(
+            {
+                name: formatHour(i),
+                data: getHeatMapDataByHour(heatMapData, i)
+            }
+        );
+    return data;
+}
+
+class ApexChart extends React.Component {
     render() {
         const chartData = {
-            series: [
-                {
-                    name: 'Saturday',
-                    data: getHeatMapDataByDay(this.props.heatMapData, 'Saturday')
-                },
-                {
-                    name: 'Friday',
-                    data: getHeatMapDataByDay(this.props.heatMapData, 'Friday')
-                },
-                {
-                    name: 'Thursday',
-                    data: getHeatMapDataByDay(this.props.heatMapData, 'Thursday')
-                },
-                {
-                    name: 'Wednesday',
-                    data: getHeatMapDataByDay(this.props.heatMapData, 'Wednesday')
-                },
-                {
-                    name: 'Tuesday',
-                    data: getHeatMapDataByDay(this.props.heatMapData, 'Tuesday')
-                },
-                {
-                    name: 'Monday',
-                    data: getHeatMapDataByDay(this.props.heatMapData, 'Monday')
-                },
-                {
-                    name: 'Sunday',
-                    data: getHeatMapDataByDay(this.props.heatMapData, 'Sunday')
-                },
-            ],
+            series: produceChartDataFlipped(this.props.heatMapData),
             options: {
                 chart: {
                     height: 350,
