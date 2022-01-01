@@ -14,11 +14,21 @@ const STR_DAY_MAP = {
 }
 
 const formatHour = (hour) => {
+    let hourComponent = "";
     if (hour < 10) {
-        return `0${hour}:00`;
+        hourComponent = `0${hour}`;
+    } else {
+        hourComponent = hour;
     }
 
-    return `${hour}:00`
+    let minuteComponent = "";
+    if (hour % 1 == 0) {
+        minuteComponent = "00";
+    } else {
+        minuteComponent = "30";
+    }
+
+    return `${hourComponent}:${minuteComponent}`
 }
 
 const getHeatMapDataByHour = (heatMapData, hourI) => {
@@ -26,12 +36,7 @@ const getHeatMapDataByHour = (heatMapData, hourI) => {
 
     for (const[day, hourValues] of Object.entries(heatMapData)) {
         let dayStr = Object.keys(STR_DAY_MAP).filter(function(key) {return STR_DAY_MAP[key] === parseInt(day)})[0];
-        console.log(hourValues);
-        console.log(hourI);
-        let hourValue = hourValues[parseFloat(hourI)];
-        console.log(day);
-        console.log(dayStr);
-        console.log(hourValue);
+        let hourValue = hourValues[hourI.toFixed(1)];
         realHeatMapData.push(
             {
                 x: dayStr, y: Math.round((100 - hourValue) * 100) / 100
@@ -129,7 +134,7 @@ class ApexChart extends React.Component {
 
         return (
             <div id="chart">
-                <ReactApexChart options={chartData.options} series={chartData.series} type="heatmap" height={FLIPPED ? 700 : 350}/>
+                <ReactApexChart options={chartData.options} series={chartData.series} type="heatmap" height={FLIPPED ? 1400 : 350}/>
             </div>
         )
     }
