@@ -62,7 +62,6 @@ const HeatmapPage = (props) => {
         );
     }
 
-    console.log(heatMapData);
     return (
         <div>
             <div>
