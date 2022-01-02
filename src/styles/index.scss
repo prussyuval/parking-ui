@@ -181,3 +181,17 @@ html {
 #parking-lot-heat-map-selector {
   margin-top: 20px;
 }
+
+.drawer {
+  width: 25%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.drawer-option {
+  font-family: $main-font;
+  font-size: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}

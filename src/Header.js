@@ -20,6 +20,7 @@ const Header = (props) => {
   }
 
   const navigateToHeatMap = () => {
+      toggleDrawer(false);
       navigate("/heat-map", {replace: true});
   }
 
@@ -28,9 +29,10 @@ const Header = (props) => {
             <MenuIcon onClick={toggleDrawer(true)} className="menu-icon" color={"inherit"} />
             <Drawer
               anchor="left"
+              className="drawer"
               open={sideBarOpen}
               onClose={toggleDrawer(false)} >
-                <div onClick={navigateToHeatMap}>
+                <div className="drawer-option" onClick={navigateToHeatMap}>
                     Heat map
                 </div>
             </Drawer>

@@ -64,7 +64,27 @@ const HeatmapPage = (props) => {
 
     console.log(heatMapData);
     return (
-        <ApexChart heatMapData={heatMapData} />
+        <div>
+            <div>
+                <Box sx={{ minWidth: 120 }} id="parking-lot-heat-map-selector">
+                  <FormControl fullWidth>
+                    <InputLabel>Parking lot id</InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={parkingLot}
+                      label="Choose parking lot"
+                      onChange={searchParkingLot}
+                    >
+                      <MenuItem value={40}>Ravnitski</MenuItem>
+                      <MenuItem value={45}>Tel nordau</MenuItem>
+                      <MenuItem value={94}>Habima theatre</MenuItem>
+                    </Select>
+                  </FormControl>
+                </Box>
+            </div>
+            <ApexChart heatMapData={heatMapData} />
+        </div>
     );
 }
 
