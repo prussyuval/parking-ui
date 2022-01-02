@@ -7,8 +7,8 @@ const Header = (props) => {
   const [sideBarOpen, setSideBarOpen] = useState(false);
   const navigate = useNavigate();
 
-  const toggleDrawer = (open) => (event) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+  const toggleDrawer = (event, open) => {
+    if (event !== null && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
 
@@ -20,18 +20,18 @@ const Header = (props) => {
   }
 
   const navigateToHeatMap = () => {
-      toggleDrawer(false);
+      toggleDrawer(null, false);
       navigate("/heat-map", {replace: true});
   }
 
     return (
         <div className="header">
-            <MenuIcon onClick={toggleDrawer(true)} className="menu-icon" color={"inherit"} />
+            <MenuIcon onClick={(event) => toggleDrawer(event, true)} className="menu-icon" color={"inherit"} />
             <Drawer
               anchor="left"
               className="drawer"
               open={sideBarOpen}
-              onClose={toggleDrawer(false)} >
+              onClose={() => {toggleDrawer(null, false)}} >
                 <div className="drawer-option" onClick={navigateToHeatMap}>
                     Heat map
                 </div>
