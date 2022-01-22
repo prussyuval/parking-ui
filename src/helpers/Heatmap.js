@@ -111,39 +111,28 @@ class ApexChart extends React.Component {
                 dataLabels: {
                     enabled: false
                 },
-                colors: ["#008FFB"],
+                colors: ["#FF0000"],
                 title: {
                     text: ''
                 },
-                plotOptions: {
-                    heatmap: {
-                        shadeIntensity: 0.5,
-                        radius: 0,
-                        useFillColorAsStroke: false,
-                        colorScale: {
-                            ranges: [
-                                // {
-                                //     from: 0,
-                                //     to: 90,
-                                //     name: 'free',
-                                //     color: '#00A100'
-                                // },
-                                // {
-                                //     from: 5,
-                                //     to: 90,
-                                //     name: 'almost full',
-                                //     color: '#FFB200'
-                                // },
-                                {
-                                    from: 0,
-                                    to: 100,
-                                    name: 'occupation',
-                                    color: '#FF0000'
-                                }
-                            ]
-                        }
-                    }
-                }
+                // plotOptions: {
+                //     heatmap: {
+                //         shadeIntensity: 0.5,
+                //         radius: 0,
+                //         useFillColorAsStroke: false,
+                //         colorScale: {
+                //             ranges: [
+                //
+                //                 {
+                //                     from: 0,
+                //                     to: 100,
+                //                     name: 'occupation',
+                //                     color: '#FF0000'
+                //                 }
+                //             ]
+                //         }
+                //     }
+                // }
             },
         };
 
