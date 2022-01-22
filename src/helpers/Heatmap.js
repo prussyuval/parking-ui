@@ -37,8 +37,11 @@ const getHeatMapDataByHour = (heatMapData, hourI) => {
 
     for (let day of DAYS_ORDER) {
         let hourValues = heatMapData[day];
+        console.log(hourValues)
         let dayStr = Object.keys(STR_DAY_MAP).filter(function(key) {return STR_DAY_MAP[key] === parseInt(day)})[0];
+        console.log(dayStr)
         let hourValue = hourValues[hourI.toFixed(1)];
+        console.log(hourValue)
         realHeatMapData.push(
             {
                 x: dayStr, y: Math.round((100 - hourValue) * 100) / 100
