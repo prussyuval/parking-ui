@@ -123,85 +123,71 @@ class ApexChart extends React.Component {
                             ranges: [{
                                 from: 0,
                                 to: 90,
-                                name: 'low',
                                 color: '#00A100'
                               },
                               {
                                 from: 88,
                                 to: 89,
-                                name: 'almost full',
                                 color: '#ffe600'
                               },
                               {
                                 from: 89,
                                 to: 90,
-                                name: 'almost full',
                                 color: '#ffd000'
                               },
                               {
                                 from: 89,
                                 to: 90,
-                                name: 'almost full',
                                 color: '#ffbf00'
                               },
                               {
                                 from: 90,
                                 to: 91,
-                                name: 'almost full',
                                 color: '#ffae00'
                               },
                               {
                                 from: 91,
                                 to: 92,
-                                name: 'almost full',
                                 color: '#ffa200'
                               },
                               {
                                 from: 92,
                                 to: 93,
-                                name: 'almost full',
                                 color: '#ff9100'
                               },
                               {
                                 from: 93,
                                 to: 94,
-                                name: 'almost full',
                                 color: '#ff7700'
                               },
                               {
                                 from: 94,
                                 to: 95,
-                                name: 'almost full',
                                 color: '#ff6f00'
                               },
                               {
                                 from: 95,
                                 to: 96,
-                                name: 'full',
                                 color: '#ff5e00'
                               },
                               {
                                 from: 96,
                                 to: 97,
-                                name: 'full',
                                 color: '#ff4d00'
                               },
                               {
                                 from: 97,
                                 to: 98,
-                                name: 'full',
                                 color: '#ff3300'
                               },
                               {
                                 from: 98,
                                 to: 99,
-                                name: 'full',
                                 color: '#ff2600'
                               },
                               {
                                 from: 99,
                                 to: 100,
-                                name: 'full',
                                 color: '#FF0000'
                               }
                             ]
