@@ -53,7 +53,7 @@ const getHeatMapDataByHour = (heatMapData, hourI) => {
         console.log(hourValue)
         realHeatMapData.push(
             {
-                x: dayStr, y: Math.round((100 - hourValue) * 100) / 100
+                x: dayStr, y: 100 - (Math.round((100 - hourValue) * 100) / 100)
             }
         )
     }
@@ -67,7 +67,7 @@ const produceChartDataFlipped = (heatMapData) => {
         data.push(
             {
                 name: formatHour(i),
-                data: 100- getHeatMapDataByHour(heatMapData, i)
+                data: getHeatMapDataByHour(heatMapData, i)
             }
         );
     return data;
