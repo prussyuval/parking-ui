@@ -40,8 +40,16 @@ const getHeatMapDataByHour = (heatMapData, hourI) => {
         console.log(hourValues)
         let dayStr = Object.keys(STR_DAY_MAP).filter(function(key) {return STR_DAY_MAP[key] === parseInt(day)})[0];
         console.log(dayStr)
-        let hourValue = hourValues[hourI.toFixed(1)];
+
+        let fetchedHourValue = hourI.toFixed(1)
+        if (hourI.endsWith(".0")) {
+            fetchedHourValue = fetchedHourValue.replace(".0", "")
+        }
+
+        let hourValue = hourValues[fetchedHourValue];
+
         console.log(hourI)
+        console.log(fetchedHourValue)
         console.log(hourValue)
         realHeatMapData.push(
             {
