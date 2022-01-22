@@ -23,6 +23,10 @@ const HeatmapPage = (props) => {
           setLoading(false);
         }
 
+      if (parkingLot === null) {
+          return;
+      }
+
       getHeatMapData();
   }, [parkingLot]);
 
