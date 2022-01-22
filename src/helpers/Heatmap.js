@@ -67,7 +67,7 @@ const produceChartDataFlipped = (heatMapData) => {
         data.push(
             {
                 name: formatHour(i),
-                data: getHeatMapDataByHour(heatMapData, i)
+                data: 100- getHeatMapDataByHour(heatMapData, i)
             }
         );
     return data;
@@ -79,7 +79,7 @@ const getHeatMapDataByDay = (heatMapData, dayI) => {
     for (const[hour, value] of Object.entries(heatMapData[STR_DAY_MAP[dayI]])) {
         realHeatMapData.push(
             {
-                x: formatHour(hour), y: Math.round((100 - value) * 100) / 100
+                x: formatHour(hour), y: 100 - (Math.round((100 - value) * 100) / 100)
             }
         )
     }
@@ -122,20 +122,20 @@ class ApexChart extends React.Component {
                         useFillColorAsStroke: false,
                         colorScale: {
                             ranges: [{
-                                    from: 10,
-                                    to: 100,
+                                    from: 0,
+                                    to: 90,
                                     name: 'free',
                                     color: '#00A100'
                                 },
+                                // {
+                                //     from: 5,
+                                //     to: 90,
+                                //     name: 'almost full',
+                                //     color: '#FFB200'
+                                // },
                                 {
-                                    from: 5,
-                                    to: 10,
-                                    name: 'almost full',
-                                    color: '#FFB200'
-                                },
-                                {
-                                    from: 0,
-                                    to: 5,
+                                    from: 90,
+                                    to: 100,
                                     name: 'full',
                                     color: '#FF0000'
                                 }
