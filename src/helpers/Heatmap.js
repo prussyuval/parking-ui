@@ -42,7 +42,7 @@ const getHeatMapDataByHour = (heatMapData, hourI) => {
         console.log(dayStr)
 
         let fetchedHourValue = hourI.toFixed(1)
-        if (hourI.endsWith(".0")) {
+        if (fetchedHourValue.endsWith(".0")) {
             fetchedHourValue = fetchedHourValue.replace(".0", "")
         }
 
