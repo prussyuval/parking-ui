@@ -121,12 +121,13 @@ class ApexChart extends React.Component {
                         radius: 0,
                         useFillColorAsStroke: false,
                         colorScale: {
-                            ranges: [{
-                                    from: 0,
-                                    to: 90,
-                                    name: 'free',
-                                    color: '#00A100'
-                                },
+                            ranges: [
+                                // {
+                                //     from: 0,
+                                //     to: 90,
+                                //     name: 'free',
+                                //     color: '#00A100'
+                                // },
                                 // {
                                 //     from: 5,
                                 //     to: 90,
@@ -134,9 +135,9 @@ class ApexChart extends React.Component {
                                 //     color: '#FFB200'
                                 // },
                                 {
-                                    from: 90,
+                                    from: 0,
                                     to: 100,
-                                    name: 'full',
+                                    name: 'occupation',
                                     color: '#FF0000'
                                 }
                             ]
