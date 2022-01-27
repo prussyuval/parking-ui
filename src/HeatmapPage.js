@@ -7,6 +7,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import isObjectEmpty from "./helpers/utils";
 
 
 const HeatmapPage = (props) => {
@@ -101,12 +102,12 @@ const HeatmapPage = (props) => {
                 </Box>
             </div>
             {
-                heatMapData && (
+                !isObjectEmpty(heatMapData) && (
                     <ApexChart heatMapData={heatMapData} />
                 )
             }
             {
-                !heatMapData && (
+                isObjectEmpty(heatMapData) && (
                     <div>
                         Heatmap data is not known, but it will be available in the near future
                     </div>

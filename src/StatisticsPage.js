@@ -101,12 +101,11 @@ const StatisticsPage = (props) => {
                     )
                 }
                 {
-                        !futureStatus && (
-                            <div>
-                                The previous status is not known, but it will be available in the near future
-                            </div>
-                        )
-                    }
+                    !storedStatus && (
+                        <div>
+                            The previous status is not known, but it will be available in the near future
+                        </div>
+                    )
                 }
             </div>
             <div className="statistics-section">
