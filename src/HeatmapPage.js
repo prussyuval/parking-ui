@@ -51,6 +51,13 @@ const HeatmapPage = (props) => {
                   <MenuItem value={40}>Ravnitski</MenuItem>
                   <MenuItem value={45}>Tel nordau</MenuItem>
                   <MenuItem value={94}>Habima theatre</MenuItem>
+                  <MenuItem value={29}>montefiore</MenuItem>
+                  <MenuItem value={10}>golda</MenuItem>
+                  <MenuItem value={123}>arlosoroff</MenuItem>
+                  <MenuItem value={122}>assuta</MenuItem>
+                  <MenuItem value={3}>basel</MenuItem>
+                  <MenuItem value={37}>cinerama</MenuItem>
+                  <MenuItem value={31}>da vinchi</MenuItem>
                 </Select>
               </FormControl>
             </Box>
@@ -82,6 +89,13 @@ const HeatmapPage = (props) => {
                       <MenuItem value={40}>Ravnitski</MenuItem>
                       <MenuItem value={45}>Tel nordau</MenuItem>
                       <MenuItem value={94}>Habima theatre</MenuItem>
+                      <MenuItem value={29}>montefiore</MenuItem>
+                      <MenuItem value={10}>golda</MenuItem>
+                      <MenuItem value={123}>arlosoroff</MenuItem>
+                      <MenuItem value={122}>assuta</MenuItem>
+                      <MenuItem value={3}>basel</MenuItem>
+                      <MenuItem value={37}>cinerama</MenuItem>
+                      <MenuItem value={31}>da vinchi</MenuItem>
                     </Select>
                   </FormControl>
                 </Box>

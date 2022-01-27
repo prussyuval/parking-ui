@@ -8,6 +8,13 @@ const PARKING_LOT_NAMES = {
     "tel nordau": "תל נורדאו",
     "habima theatre": "הבימה",
     "ravnitski": "רבניצקי",
+    "montefiore": 'מונטיפיורי',
+    "golda": 'גולדה',
+    "arlosoroff": 'ארלוזורוב 17',
+    "assuta": 'אסותא',
+    "basel": 'באזל',
+    "cinerama": 'סינרמה',
+    "Da vinci":  'מפעל הפיס',
 }
 
 const SearchComponent = () => {

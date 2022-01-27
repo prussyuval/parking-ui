@@ -4,6 +4,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import ServerRequest from "./ServerRequest";
 import FutureStatistics from "./components/FutureStatistics";
 import StatusBar from "./components/StatusBar";
+import MenuItem from "@mui/material/MenuItem";
 
 const PARKING_LOT_STATUS = {
     EMPTY: "Many parking spots are available",
@@ -27,6 +28,13 @@ const PARKING_LOT_IDS = {
     "tel nordau": 45,
     "habima theatre": 94,
     "ravnitski": 40,
+    "montefiore": 29,
+    "golda": 10,
+    "arlosoroff": 123,
+    "assuta": 122,
+    "basel": 3,
+    "cinerama": 37,
+    "da vinchi": 31,
 }
 
 
