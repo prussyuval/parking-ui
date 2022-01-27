@@ -100,9 +100,20 @@ const HeatmapPage = (props) => {
                   </FormControl>
                 </Box>
             </div>
-            <ApexChart heatMapData={heatMapData} />
+            {
+                heatMapData && (
+                    <ApexChart heatMapData={heatMapData} />
+                )
+            }
+            {
+                !heatMapData && (
+                    <div>
+                        Heatmap data is not known, but it will be available in the near future
+                    </div>
+                )
+            }
         </div>
     );
-}
+};
 
 export default HeatmapPage;

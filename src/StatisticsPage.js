@@ -75,14 +75,6 @@ const StatisticsPage = (props) => {
     const storedStatus = statistics["data"]["stored_status"];
     const futureStatus = statistics["data"]["future_status"];
 
-    const storedFull = Object.values(storedStatus).filter(status => status === 3).length;
-    const storedFew = Object.values(storedStatus).filter(status => status === 2).length;
-    const storedEmpty = Object.values(storedStatus).filter(status => status === 1).length;
-
-    const futureFull = Object.values(futureStatus).filter(status => status === 3).length;
-    const futureFew = Object.values(futureStatus).filter(status => status === 2).length;
-    const futureEmpty = Object.values(futureStatus).filter(status => status === 1).length;
-
     return (
         <Fragment>
             <div className="statistics-section">
@@ -97,9 +89,25 @@ const StatisticsPage = (props) => {
                 <div className="statistics-title">
                     Previous
                 </div>
-                <div className="statistics-content">
-                    <StatusBar full={storedFull} empty={storedEmpty} few={storedFew} withText={true} future={false} />
-                </div>
+                {
+                    storedStatus && (
+                        <div className="statistics-content">
+                            <StatusBar full={Object.values(storedStatus).filter(status => status === 3).length}
+                                       empty={Object.values(storedStatus).filter(status => status === 2).length}
+                                       few={Object.values(storedStatus).filter(status => status === 1).length}
+                                       withText={true}
+                                       future={false}/>
+                        </div>
+                    )
+                }
+                {
+                        !futureStatus && (
+                            <div>
+                                The previous status is not known, but it will be available in the near future
+                            </div>
+                        )
+                    }
+                }
             </div>
             <div className="statistics-section">
                 <div className="statistics-title">
@@ -107,7 +115,22 @@ const StatisticsPage = (props) => {
                 </div>
                 <FutureStatistics />
                 <div className="statistics-content">
-                    <StatusBar full={futureFull} empty={futureEmpty} few={futureFew} withText={true} future={true}/>
+                    {
+                        futureStatus && (
+                            <StatusBar full={Object.values(futureStatus).filter(status => status === 3).length}
+                                       empty={Object.values(futureStatus).filter(status => status === 2).length}
+                                       few={Object.values(futureStatus).filter(status => status === 1).length}
+                                       withText={true}
+                                       future={true}/>
+                        )
+                    }
+                    {
+                        !futureStatus && (
+                            <div>
+                                Future status is not known, but it will be available in the near future
+                            </div>
+                        )
+                    }
                 </div>
             </div>
         </Fragment>
