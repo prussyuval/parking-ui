@@ -37,9 +37,8 @@ const getHeatMapDataByHour = (heatMapData, hourI) => {
 
     for (let day of DAYS_ORDER) {
         let hourValues = heatMapData[day];
-        console.log(hourValues)
+
         let dayStr = Object.keys(STR_DAY_MAP).filter(function(key) {return STR_DAY_MAP[key] === parseInt(day)})[0];
-        console.log(dayStr)
 
         let fetchedHourValue = hourI.toFixed(1)
         if (fetchedHourValue.endsWith(".0")) {
@@ -48,14 +47,14 @@ const getHeatMapDataByHour = (heatMapData, hourI) => {
 
         let hourValue = hourValues[fetchedHourValue];
 
-        console.log(hourI)
-        console.log(fetchedHourValue)
-        console.log(hourValue)
-        realHeatMapData.push(
-            {
-                x: dayStr, y: 100 - (Math.round((100 - hourValue) * 100) / 100)
-            }
-        )
+        let yValue;
+        if (hourValue !== undefined) {
+            yValue = 100 - (Math.round((100 - hourValue) * 100) / 100);
+        } else {
+            yValue = -1;
+        }
+
+        realHeatMapData.push({x: dayStr, y: yValue});
     }
 
     return realHeatMapData;
@@ -77,11 +76,15 @@ const getHeatMapDataByDay = (heatMapData, dayI) => {
     let realHeatMapData = []
 
     for (const[hour, value] of Object.entries(heatMapData[STR_DAY_MAP[dayI]])) {
-        realHeatMapData.push(
-            {
-                x: formatHour(hour), y: 100 - (Math.round((100 - value) * 100) / 100)
-            }
-        )
+
+        let yValue;
+        if (value !== undefined) {
+            yValue = 100 - (Math.round((100 - value) * 100) / 100)
+        } else {
+            yValue = -1;
+        }
+
+        realHeatMapData.push({x: formatHour(hour), y: yValue});
     }
 
     return realHeatMapData;
