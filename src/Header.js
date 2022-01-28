@@ -2,6 +2,7 @@ import {Fragment, useState} from "react";
 import {Button, Drawer} from "@mui/material";
 import MenuIcon from '@material-ui/icons/Menu';
 import {useNavigate} from "react-router-dom";
+import AnalyticsIcon from '@mui/icons-material/Analytics';
 
 const Header = (props) => {
   const [sideBarOpen, setSideBarOpen] = useState(false);
@@ -33,6 +34,7 @@ const Header = (props) => {
               open={sideBarOpen}
               onClose={() => {toggleDrawer(null, false)}} >
                 <div className="drawer-option" onClick={navigateToHeatMap}>
+                    <AnalyticsIcon />
                     Heat map
                 </div>
             </Drawer>
