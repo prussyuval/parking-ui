@@ -159,20 +159,9 @@ html {
 
   }
 
-  &__car {
-    height: 36px;
-    margin-top: 15px;
+  &__messages {
+    .message {
 
-    &.speed-fast {
-      animation: slidein 3s linear infinite alternate;
-    }
-
-    &.speed-medium {
-      animation: slidein 6s linear infinite alternate;
-    }
-
-    &.speed-slow {
-      animation: slidein 9s linear infinite alternate;
     }
   }
 

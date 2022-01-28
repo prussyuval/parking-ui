@@ -10,16 +10,13 @@ const HomePage = () => {
                 made easy
             </div>
 
-            <div className="cars">
-                {/*<div>*/}
-                {/*    <img className="home-page__car speed-fast" src={Car} />*/}
-                {/*</div>*/}
-                {/*<div>*/}
-                {/*    <img className="home-page__car speed-medium" src={Car} />*/}
-                {/*</div>*/}
-                {/*<div>*/}
-                {/*    <img className="home-page__car speed-slow" src={Car} />*/}
-                {/*</div>*/}
+            <div className="home-page__messages">
+                <div className="message">
+                    We are monitoring on 7 new parking lots!
+                </div>
+                <div className="message">
+                    Visit heat map tab to see
+                </div>
             </div>
 
         </div>
