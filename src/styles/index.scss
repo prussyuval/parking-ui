@@ -160,8 +160,15 @@ html {
   }
 
   &__messages {
-    .message {
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 24px;
 
+    .message {
+      margin-top: 10px;
+      border: 1px solid rgb(47, 187, 261);
+      padding: 8px;
+      background-color: rgb(177, 224, 245);
     }
   }
 
