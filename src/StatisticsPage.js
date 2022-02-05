@@ -35,6 +35,10 @@ const PARKING_LOT_IDS = {
     "basel": 3,
     "cinerama": 37,
     "da vinchi": 31,
+    'hevra hadasha': 4,
+    'palmach': 39,
+    'ha-tsfira': 19,
+    'saadia gaon': 38,
 }
 
 

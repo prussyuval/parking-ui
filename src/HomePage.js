@@ -1,5 +1,3 @@
-import Car from "./assets/car.png";
-
 const HomePage = () => {
     return (
         <div className="home-page">
@@ -12,10 +10,10 @@ const HomePage = () => {
 
             <div className="home-page__messages">
                 <div className="message">
-                    We are monitoring on 7 new parking lots
+                    We are monitoring on 4 new parking lots
                 </div>
                 <div className="message">
-                    Visit heat map tab to see some stats
+                    Visit heat map tab to see some stats (updated)
                 </div>
             </div>
 

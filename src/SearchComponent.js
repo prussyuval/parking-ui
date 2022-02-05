@@ -15,6 +15,10 @@ const PARKING_LOT_NAMES = {
     "basel": 'באזל',
     "cinerama": 'סינרמה',
     "Da vinci":  'מפעל הפיס',
+    'hevra hadasha': 'חברה חדשה',
+    'palmach': 'פלמ״ח',
+    'ha-tsfira': 'הצפירה 1',
+    'saadia gaon': 'סעדיה גאון',
 }
 
 const SearchComponent = () => {
