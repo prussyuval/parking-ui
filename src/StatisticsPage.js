@@ -97,8 +97,8 @@ const StatisticsPage = (props) => {
                     storedStatus && (
                         <div className="statistics-content">
                             <StatusBar full={Object.values(storedStatus).filter(status => status === 3).length}
-                                       empty={Object.values(storedStatus).filter(status => status === 2).length}
-                                       few={Object.values(storedStatus).filter(status => status === 1).length}
+                                       empty={Object.values(storedStatus).filter(status => status === 1).length}
+                                       few={Object.values(storedStatus).filter(status => status === 2).length}
                                        withText={true}
                                        future={false}/>
                         </div>
@@ -121,8 +121,8 @@ const StatisticsPage = (props) => {
                     {
                         futureStatus && (
                             <StatusBar full={Object.values(futureStatus).filter(status => status === 3).length}
-                                       empty={Object.values(futureStatus).filter(status => status === 2).length}
-                                       few={Object.values(futureStatus).filter(status => status === 1).length}
+                                       empty={Object.values(futureStatus).filter(status => status === 1).length}
+                                       few={Object.values(futureStatus).filter(status => status === 2).length}
                                        withText={true}
                                        future={true}/>
                         )
