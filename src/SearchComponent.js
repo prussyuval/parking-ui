@@ -66,7 +66,7 @@ const SearchComponent = () => {
           <div className="search-results">
               {Object.entries(searchOptions).map(([engName, hebName]) =>
                   <div key={engName} className="lot-option" onClick={() => {selectLot(engName)}}>
-                      <ArrowRightIcon />
+                      {/*<ArrowRightIcon />*/}
                       <div className="lot-option__text">
                         {engName.charAt(0).toUpperCase() + engName.slice(1)}
                       </div>
