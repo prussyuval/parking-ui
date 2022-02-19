@@ -23,7 +23,7 @@ const PARKING_LOT_NAMES = {
 
 const SearchComponent = () => {
   const [lotSearchValue, setLotSearchValue] = useState("");
-  const [searchOptions, setSearchOptions] = useState({});
+  const [searchOptions, setSearchOptions] = useState(PARKING_LOT_NAMES);
   const navigate = useNavigate();
 
   const onSearchChange = (e) => {
@@ -32,7 +32,7 @@ const SearchComponent = () => {
       navigate(`/`, {replace: true});
 
       if (searchedValue === "") {
-          setSearchOptions({});
+          setSearchOptions(PARKING_LOT_NAMES);
           return;
       }
 
