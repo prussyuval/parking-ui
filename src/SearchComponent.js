@@ -68,7 +68,12 @@ const SearchComponent = () => {
                   <div key={engName} className="lot-option" onClick={() => {selectLot(engName)}}>
                       {/*<ArrowRightIcon />*/}
                       <div className="lot-option__text">
-                        {engName.charAt(0).toUpperCase() + engName.slice(1)}
+                          <span>
+                            {engName.charAt(0).toUpperCase() + engName.slice(1)}
+                          </span>
+                          <span>
+                              hebName
+                          </span>
                       </div>
                   </div>
                   )

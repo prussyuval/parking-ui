@@ -59,10 +59,15 @@ html {
     font-family: $main-font;
     display: flex;
     align-items: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
     margin-top: 5px;
     margin-bottom: 5px;
+
+    &__text {
+      display: flex;
+      justify-content: space-around;
+    }
   }
 }
 
