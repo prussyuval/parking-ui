@@ -1,13 +1,14 @@
 const HomePage = () => {
     return (
         <div className="home-page">
-            <div className="home-page__first-liner">
-                Parking
-            </div>
             <div>
-                made easy
+                <span className="home-page__first-liner">
+                    Parking
+                </span>
+                <span>
+                    made easy
+                </span>
             </div>
-
             {/*<div className="home-page__messages">*/}
             {/*    <div className="message">*/}
             {/*        We are monitoring on 4 new parking lots*/}
