@@ -72,7 +72,7 @@ const SearchComponent = () => {
                             {engName.charAt(0).toUpperCase() + engName.slice(1)}
                           </span>
                           <span>
-                              hebName
+                              {hebName}
                           </span>
                       </div>
                   </div>
