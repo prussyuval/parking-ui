@@ -59,16 +59,11 @@ html {
     font-family: $main-font;
     display: flex;
     align-items: center;
+    justify-content: space-around;
     padding: 10px;
     border-radius: 8px;
     margin-top: 10px;
     margin-bottom: 10px;
-
-    &__text {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-    }
   }
 }
 
