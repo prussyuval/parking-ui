@@ -39,6 +39,7 @@ const PARKING_LOT_IDS = {
     'palmach': 39,
     'ha-tsfira': 19,
     'saadia gaon': 38,
+    'libar': 120,
 }
 
 

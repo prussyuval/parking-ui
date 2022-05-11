@@ -63,6 +63,7 @@ const HeatmapPage = (props) => {
                   <MenuItem value={39}>palmach</MenuItem>
                   <MenuItem value={19}>ha-tsfira</MenuItem>
                   <MenuItem value={38}>saadia gaon</MenuItem>
+                  <MenuItem value={120}>libar</MenuItem>
                 </Select>
               </FormControl>
             </Box>
@@ -105,6 +106,7 @@ const HeatmapPage = (props) => {
                       <MenuItem value={39}>palmach</MenuItem>
                       <MenuItem value={19}>ha-tsfira</MenuItem>
                       <MenuItem value={38}>saadia gaon</MenuItem>
+                      <MenuItem value={120}>libar</MenuItem>
                     </Select>
                   </FormControl>
                 </Box>
