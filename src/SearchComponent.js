@@ -19,6 +19,7 @@ const PARKING_LOT_NAMES = {
     'palmach': 'פלמ״ח',
     'ha-tsfira': 'הצפירה 1',
     'saadia gaon': 'סעדיה גאון',
+    'libar': 'ליבר',
 }
 
 const SearchComponent = () => {
